@@ -1,0 +1,48 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.image{
+    background-image: url(../images/freeze.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
+    width: 100%;
+}
+
+.tag{
+    margin: 50px 0px;
+    padding: 0px 40px;
+}
+
+.tag li{
+    margin-top: 50px;
+    letter-spacing: 0.3px;
+    color: black;
+    font-size: 20px;
+    font-weight: 300;
+    padding-top: 20px;
+}
+.toggle{
+    margin: 30px 10px;
+    padding: 20px 80px;
+    text-align: center;
+}
+.toggle h1{
+    font-weight: 400;
+}
+.toggle img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    margin: 18px 0px;
+}
+.toggle p{
+    font-weight: 300;
+    font-size: 20px;
+}

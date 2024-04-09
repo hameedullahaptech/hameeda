@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ .pak{
+    height: 80vh;
+ }
+
+#mehraj{
+    width: 60%;
+    float: left;
+    margin-left: 40px;
+    background-color: beige;
+}
+#muhammad{
+    float: right;
+    width: 35%;
+    margin-right: 27.4px;
+    background-color: beige;
+}
+
+.anchor img{
+    height: auto;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+.anchor i{
+    font-size: 50px;
+}
+.anchor p{
+    font-size: small;
+    font-weight: 600;
+}
+
+
+@media (max-width: 768px){
+    #mehraj{
+        align-items: center;
+        width: 100%;
+    }
+    #muhammad{
+        width: 100%;
+    }
+    .anchor img{
+        height: auto;
+        width: 100%;
+    }
+}
+
+ 

@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+    }
+
+    .container .row .col ul li a {
+      text-decoration: none;
+      display: flex;
+      color: rgb(15, 95, 21);
+    }
+
+    .container .row .col ul li {
+      list-style: none;
+      display: flex;
+    }
+
+    .container .row .col ul {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    /* Additional Touch-Ups */
+    /* h1,h2,h3,h4,h5,p {
+  font-family: 'Work Sans', sans-serif;
+} */
+
+
+    .material-card img {
+      height: auto;
+      width: 100%;
+    }
+
+    /* Additional Touch-Ups */
+
+    /* Material Web Card */
+    /* Block */
+    .material-card {
+      display: block;
+      /* background-color: #28292a; */
+      width: 300px;
+      min-width: 200px;
+      color: black;
+      text-decoration: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 200ms cubic-bezier(.2, 0, 0, 1);
+    }
+
+    /* Elements */
+    .material-card .card-picture {
+      border-radius: 30px;
+      transition: 200ms cubic-bezier(.2, 0, 0, 1);
+    }
+
+    .material-card .card-info {
+      padding: 20px;
+    }
+
+    .material-card .card-title {
+      font-weight: 400;
+    }
+
+    .container .row .card-title:hover {
+      color: gray;
+      transition: all 0.2s linear;
+    }
+
+
+    .container .row .col ul li a:hover {
+      border-bottom: 1px solid rgb(11, 88, 24);
+      transition: all 0.23s linear;
+    }
+
+
+    /* .card-desc {
+  
+} */
+    .nre {
+      position: relative;
+    }
+
+    .nre p {
+      position: absolute;
+      top: 300px;
+      width: 340px;
+      line-height: 35px;
+      text-align: center;
+      font-size: 20px;
+      right: 30px;
+      background-color: rgba(41, 130, 123, 0.116);
+      color: black;
+    }
+
+    .nre p span {
+      font-size: 30px;
+      color: rgba(255, 255, 255, 0.507);
+    }
+
+    /* Modifiers */
+    .material-card:active {
+      border-radius: 50px;
+      background-color: #004a77;
+    }
+
+    .material-card .card-picture:active {
+      border-top-right-radius: 50px;
+      border-top-left-radius: 50px;
+    }
+
+    /* cards */
+
+
+
+   
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+
+    .nay img {
+      display: block;
+    }
+
+    .nay {
+      margin-top: 190px !important;
+    }
+
+    .nay {
+      max-width: 93.5rem;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .nay .btn {
+      display: inline-block;
+      font: inherit;
+      background: none;
+      border: none;
+      color: inherit;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .nay .btn:focus {
+      outline: 0.5rem auto #4d90fe;
+    }
+
+    .nay .visually-hidden {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+    }
+
+    /* Gallery Section */
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -1rem -1rem;
+      padding-bottom: 3rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      flex: 1 0 22rem;
+      margin: 1rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover .gallery-item-info,
+    .gallery-item:focus .gallery-item-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-item-info {
+      display: none;
+    }
+
+    .gallery-item-info li {
+      display: inline-block;
+      font-size: 1.7rem;
+      font-weight: 600;
+    }
+
+    .gallery-item-likes {
+      margin-right: 2.2rem;
+    }
+
+    .gallery-item-type {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2.5rem;
+      text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+    }
+
+    .fa-clone,
+    .fa-comment {
+      transform: rotateY(180deg);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Loader */
+
+    /* .loader {
+    width: 5rem;
+    height: 5rem;
+    border: 0.6rem solid #999;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: loader 500ms linear infinite;
+} */
+
+    /* Media Query */
+
+    /* @media screen and (max-width: 40rem) {
+      .profile {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 4rem 0;
+      }
+
+      .profile::after {
+        display: none;
+      }
+
+      .profile-image,
+      .profile-user-settings,
+      .profile-bio,
+      .profile-stats {
+        float: none;
+        width: auto;
+      }
+
+      .profile-image img {
+        width: 7.7rem;
+      }
+
+      .profile-user-settings {
+        flex-basis: calc(100% - 10.7rem);
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      .profile-user-name {
+        font-size: 2.2rem;
+      }
+
+      .profile-edit-btn {
+        order: 1;
+        padding: 0;
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      .profile-edit-btn {
+        margin-left: 0;
+      }
+
+      .profile-bio {
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+      }
+
+      .profile-edit-btn,
+      .profile-bio,
+      .profile-stats {
+        flex-basis: 100%;
+      }
+
+      .profile-stats {
+        order: 1;
+        margin-top: 1.5rem;
+      }
+
+      .profile-stats ul {
+        display: flex;
+        text-align: center;
+        padding: 1.2rem 0;
+        border-top: 0.1rem solid #dadada;
+        border-bottom: 0.1rem solid #dadada;
+      }
+
+      .profile-stats li {
+        font-size: 1.4rem;
+        flex: 1;
+        margin: 0;
+      }
+
+      .profile-stat-count {
+        display: block;
+      }
+    } */
+
+    /* Spinner Animation */
+
+    /* @keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
+} */
+
+    /*
+
+The following code will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox & floated styling. 
+
+*/
+
+    /* @supports (display: grid) {
+      .profile {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(3, auto);
+        grid-column-gap: 3rem;
+        align-items: center;
+      }
+
+      .profile-image {
+        grid-row: 1 / -1;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        grid-gap: 2rem;
+      }
+
+      .profile-image,
+      .profile-user-settings,
+      .profile-stats,
+      .profile-bio,
+      .gallery-item,
+      .gallery {
+        width: auto;
+        margin: 0;
+      }
+
+      @media (max-width: 40rem) {
+        .profile {
+          grid-template-columns: auto 1fr;
+          grid-row-gap: 1.5rem;
+        }
+
+        .profile-image {
+          grid-row: 1 / 2;
+        }
+
+        .profile-user-settings {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          grid-gap: 1rem;
+        }
+
+        .profile-edit-btn,
+        .profile-stats,
+        .profile-bio {
+          grid-column: 1 / -1;
+        }
+
+        .profile-user-settings,
+        .profile-edit-btn,
+        .profile-settings-btn,
+        .profile-bio,
+        .profile-stats {
+          margin: 0;
+        }
+      }
+    } */
+
+
+
+    /* Resources1 0.5 0.25×Rerun */
+  </style>
+</head>
+
+<body>
+
+  <div id="navid">
+
+  </div>
+  <div class="container word">
+    <div class="row">
+      <div class="col">
+        <h2 class="text-center word1">YOGA POSES</h2>
+        <p class="text-center mx-auto w-75 text-secondary ">Browse our extensive asana library with a vast collection of
+          yoga poses, from beginner to advanced, including seated and standing poses, twists, poses for specific health
+          benefits, bandha techniques, and more.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul>
+          <li><a href="">poses by type</a></li>
+          <li><a href=""> yoga poses by Anatomy</a></li>
+          <li><a href="">yoga poses by Benefit</a></li>
+          <li><a href="">The poses General</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="text-center mt-4 mb-5 ">Poses by Type</h2>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <a class="material-card" href="detail1.html">
+          <img class="card-picture" src="images/poses1.webp">
+          <div class="card-info">
+            <h2 class="card-title text-center">Mountain Pose (Tadasana) </h2>
+            <p class="card-desc"></p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a class="material-card" href="detail2.html">
+          <img class="card-picture" src="images/poses3.webp">
+          <div class="card-info">
+            <h2 class="card-title text-center ">Downward-Facing Dog (Adho Mukha Svanasana)</h2>
+            <p class="card-desc"></p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a class="material-card" href="detail3.html">
+          <img class="card-picture" src="images/poses4.webp">
+          <div class="card-info">
+            <h2 class="card-title text-center">Cobra Pose (Bhujangasana)</h2>
+            <p class="card-desc"></p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="material-card" href="detail4.html">
+          <img class="card-picture" src="images/poses5.webp">
+          <div class="card-info">
+            <h2 class="card-title text-center">Child's Pose (Balasana)</h2>
+            <p class="card-desc"></p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="material-card" href="detail5.html">
+          <img class="card-picture" src="images/poses12.jpg">
+          <div class="card-info">
+            <h2 class="card-title text-center">Tree Pose (Vrksasana)</h2>
+            <p class="card-desc"></p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="material-card" href="detail6.html">
+          <img class="card-picture" src="images/stock7.jpg">
+          <div class="card-info">
+            <h2 class="card-title text-center">Bridge Pose (Setu Bandhasana)</h2>
+            <p class="card-desc"></p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="material-card" href="detail7.html">
+          <img class="card-picture" src="images/poses9.jpg">
+          <div class="card-info">
+            <h2 class="card-title text-center ">Corpse Pose (Savasana)</h2>
+            <p class="card-desc"></p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="material-card" href="detail8.html">
+          <img class="card-picture" src="images/poses10.jpg">
+          <div class="card-info">
+            <h2 class="card-title text-center">Chair Pose (Utkatasana)</h2>
+            <p class="card-desc"></p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="material-card" href="detail9.html">
+          <img class="card-picture" src="images/poses11.jpg">
+          <div class="card-info">
+            <h2 class="card-title text-center ">Seated Forward Bend (Paschimottanasana) </h2>
+            <p class="card-desc">.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5 nre">
+    <div class="row">
+      <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-xl-12 col-xxl-12">
+        <img src="images/poses15.jpg" class="img-fluid w-100" style="max-height: 500px" ; alt="">
+        <p><span>"</span>If you're a beginner, start with basic poses and gradually progress to more advanced ones.
+          Listen to your body and don't push yourself too hard. Pay attention to your breath throughout your practice.
+          Deep and mindful breathing can help you relax, stay present, and improve your overall experience.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-5  nay">
+
+    <div class="gallery">
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/poses31.jpg" class="gallery-image" alt="">
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 56</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 2</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/poses32.jpg" class="gallery-image" alt="">
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 89</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 5</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/poses30.jpg" class="gallery-image" alt="">
+
+        <div class="gallery-item-type">
+
+          <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+
+        </div>
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 42</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 1</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/canva6.jpeg" class="gallery-image" alt="">
+
+        <div class="gallery-item-type">
+
+          <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
+
+        </div>
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 38</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 0</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/canva7.jpg" class="gallery-image" alt="">
+
+        <div class="gallery-item-type">
+
+          <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+
+        </div>
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 47</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 1</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/canva8.jpg" class="gallery-image" alt="">
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 94</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 3</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/canva9.jpg" class="gallery-image" alt="">
+
+        <div class="gallery-item-type">
+
+          <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+
+        </div>
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 52</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 4</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/canva10.jpg" class="gallery-image" alt="">
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 66</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 2</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/poses16.jpeg" class="gallery-image" alt="">
+
+        <div class="gallery-item-type">
+
+          <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+
+        </div>
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 45</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 0</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/poses17.jpeg" class="gallery-image" alt="">
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 34</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 1</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/poses18.jpeg" class="gallery-image" alt="">
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 41</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 0</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="gallery-item" tabindex="0">
+
+        <img src="images/poses19.jpeg" class="gallery-image" alt="">
+
+        <div class="gallery-item-type">
+
+          <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
+
+        </div>
+
+        <div class="gallery-item-info">
+
+          <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart"
+                aria-hidden="true"></i> 30</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment"
+                aria-hidden="true"></i> 2</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- End of gallery -->
+
+    <!--  <div class="loader"></div>  -->
+
+  </div>
+  <!-- End of container -->
+
+  <div id="foot" class="footn"></div>
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
